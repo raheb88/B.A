@@ -1,0 +1,21 @@
+<h1> Listing all seminars </h1>
+
+<p>
+  <%= link_to "Create new seminar", new_seminar_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description>/th>
+  </tr>
+
+  <% @seminars.each do |seminar| %>
+  <tr>
+    <td><%= seminar.title %></td>
+    <td><%= seminar.description %></td>
+    <td><%= link_to 'Edit', edit_seminar_path(seminar) %></td>
+    <td><%= link_to 'Show', seminar_path(seminar) %></td>
+  </tr>
+  <% end %>
+</table>

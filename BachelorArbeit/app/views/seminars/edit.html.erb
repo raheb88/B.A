@@ -1,0 +1,24 @@
+<h1>Edit exiting seminar </h>
+
+  <% if @seminar.errors.any? %>
+  <ul>
+    <% @seminar.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <%= form_for @seminar do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+
+  <%= link_to "Back to seminars listing", seminars_path %>
