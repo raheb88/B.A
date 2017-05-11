@@ -1,4 +1,6 @@
 class SeminarsController  < ApplicationController
+  before_action :set_seminar, only: [:edit, :update, :show, :destroy]
+
   def index
     @seminars = Seminar.all
   end
@@ -7,7 +9,6 @@ class SeminarsController  < ApplicationController
   end
 
   def edit
-    @seminar = Seminar.find(params[:id])
   end
 
 
@@ -23,7 +24,7 @@ class SeminarsController  < ApplicationController
   end
 
   def update
-    @seminar = Seminar.find(params[:id])
+
     if @seminar.update(seminar_params)
       flash[:notice] = "Seminar was successfully updated"
       redirect_to seminar_path(@seminar)
@@ -33,17 +34,18 @@ class SeminarsController  < ApplicationController
   end
 
   def show
-    @seminar = Seminar.find(params[:id])
   end
 
   def destroy
-    @seminar = Seminar.find(params[:id])
     @seminar.destroy
     flash[:notice] = "Seminar was successfully deleted"
     redirect_to seminars_path
   end
 
   private
+  def set_seminar
+    @seminar = Seminar.find(params[:id])
+  end
   def seminar_params
     params.require(:seminar).permit(:title, :description)
   end
