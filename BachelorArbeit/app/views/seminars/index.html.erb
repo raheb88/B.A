@@ -16,6 +16,7 @@
     <td><%= seminar.description %></td>
     <td><%= link_to 'Edit', edit_seminar_path(seminar) %></td>
     <td><%= link_to 'Show', seminar_path(seminar) %></td>
+    <td><%= link_to 'Delete', seminar_path(seminar), method: :delete, data: {confirm: "Are you Sure?"} %></td>
   </tr>
   <% end %>
 </table>

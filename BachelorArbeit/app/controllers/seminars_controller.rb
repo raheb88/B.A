@@ -36,6 +36,13 @@ class SeminarsController  < ApplicationController
     @seminar = Seminar.find(params[:id])
   end
 
+  def destroy
+    @seminar = Seminar.find(params[:id])
+    @seminar.destroy
+    flash[:notice] = "Seminar was successfully deleted"
+    redirect_to seminars_path
+  end
+
   private
   def seminar_params
     params.require(:seminar).permit(:title, :description)
