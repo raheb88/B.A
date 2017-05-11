@@ -1,4 +1,4 @@
 class Seminar < ActiveRecord::Base
-  validates :title, presesence: true, length: {minumum: 1, maximum: 50}
+  validates :title, presence: true, length: {minimum: 3, maximum: 50}
 
 end

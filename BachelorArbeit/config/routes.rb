@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'home' , to: 'welcome#home'
-  get 'seminar' , to: 'welcome#seminar'
+  #  get 'home' , to: 'welcome#home'
+  #  get 'seminar' , to: 'welcome#seminar'
+    resources :seminars
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
