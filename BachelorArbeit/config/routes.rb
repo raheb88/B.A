@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #  get '' , to: 'welcome#home'
+   get 'welcome' , to: 'welcome#home'
   #  get 'seminar' , to: 'welcome#seminar'
     resources :seminars
 

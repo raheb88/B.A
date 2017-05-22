@@ -1,3 +1,5 @@
+ bis sec 5, lec 82
+///////////////////////////////////////////////////////////////////
 This is the repository fo the first B.A app
 
 Important
@@ -71,4 +73,16 @@ article.errors.full_messages
 ////////////////////////////////////////////////////////////////////
                   Cut _- Coding
 ///////////////////////////////////
-        render plain: params[:seminar].inspect // desplaying 
+        render plain: params[:seminar].inspect // desplaying
+
+
+///////////////////////////////////////////////////////////////////////////////
+                    CSSSS
+<%= link_to "Seminar", root_path, class: "navbar-brand", id: "logo" %>7
+
+  <li> <a href="#">Link <span class="sr-only">(current)</span></a></li>
+
+
+///////////////////////////////////////////////////////////////////7//////
+                  BackGround  :::: section 5 lecture 78
+////////////////////////                  ////////////////////////////////7777
