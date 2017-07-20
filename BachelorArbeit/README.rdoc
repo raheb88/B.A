@@ -1,11 +1,17 @@
- bis sec 5, lec 82
+ lec 95
 ///////////////////////////////////////////////////////////////////
-This is the repository fo the first B.A app
+This is the repository for the first B.A app
 
 Important
 1. work on seminar page.
 a. user name
 b. questions about seminar
+
+bis 22.08.17  10 Uhr
+2 Gliederung
+
+Tabellenstrucktur
+
 
 /////////////////////////////////////////////////////////////////////////////
                   Git

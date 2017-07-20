@@ -13,8 +13,9 @@ class SeminarsController  < ApplicationController
 
 
   def create
-
+  #  debugger
     @seminar = Seminar.new(seminar_params)
+    @seminar.user = User.first
     if @seminar.save
       flash[:notice] = "Seminar was successfully created"
       redirect_to seminar_path(@seminar)
