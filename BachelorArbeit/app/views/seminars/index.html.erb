@@ -9,6 +9,11 @@
           </div>
           <div class="seminar-body">
             <%= truncate(seminar.description, length: 100) %>
+            <div class="seminar-meta-details">  
+              <small>Created by: <%= seminar.user.username if seminar.user%>,
+                <%= time_ago_in_words(seminar.created_at) %> ago,
+                last updated: <%= time_ago_in_words(seminar.updated_at) %> ago</small>
+            </div>
           </div>
           <div class="seminar-actions">
             <%= link_to "Edit this article", edit_seminar_path(seminar), class: "btn-xs btn-primary" %>
