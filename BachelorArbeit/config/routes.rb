@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   #  get 'seminar' , to: 'welcome#seminar'
     resources :seminars
 
+    get 'signup', to: 'users#new'
+    #resources :users,except: [:new]
+     post 'users', to: 'users#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
