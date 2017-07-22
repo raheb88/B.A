@@ -1,27 +1,3 @@
 <h1 align="center">Listing all seminars </h1>
 
-  <% @seminars.each do |seminar| %>
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="well well-lg">
-          <div class="seminar-title">
-            <%= link_to seminar.title, seminar_path(seminar) %>
-          </div>
-          <div class="seminar-body">
-            <%= truncate(seminar.description, length: 100) %>
-            <div class="seminar-meta-details">  
-              <small>Created by: <%= seminar.user.username if seminar.user%>,
-                <%= time_ago_in_words(seminar.created_at) %> ago,
-                last updated: <%= time_ago_in_words(seminar.updated_at) %> ago</small>
-            </div>
-          </div>
-          <div class="seminar-actions">
-            <%= link_to "Edit this article", edit_seminar_path(seminar), class: "btn-xs btn-primary" %>
-            <%= link_to "Delete this seminar", seminar_path(seminar), method: :delete, data: { confirm: "Are you sure
-                         want to delete the seminar?"}, class: "btn btn-xs btn-danger" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</table>
+<%= render 'seminar', obj: @seminars %>
