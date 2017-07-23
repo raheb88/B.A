@@ -2,7 +2,7 @@ class SeminarsController  < ApplicationController
   before_action :set_seminar, only: [:edit, :update, :show, :destroy]
 
   def index
-    @seminars = Seminar.all
+    @seminars = Seminar.paginate(page: params[:page], per_page: 5)
   end
   def new
     @seminar = Seminar.new
