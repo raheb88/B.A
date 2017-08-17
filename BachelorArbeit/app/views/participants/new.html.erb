@@ -1,33 +1,24 @@
-<!DOCTYPE html>
-<!https://www.railstutorial.org/book/filling_in_the_layout#fig-site_with_footer>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
-<html>
-  <head>
-    
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all',
-                                              'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "sample app", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@participant) do |f| %>
+      <%= render 'participants/shared/error_messages' %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password , class: 'form-control'%>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

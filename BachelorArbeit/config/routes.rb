@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
     # Participant routes
     resources :participants
-    get 'login', to:  'participants#new'
-    post 'login', to: 'participants#create'
-    delete 'logout', to: 'participants#destroy'
+
+     get 'index', to: 'participants#index'
+  #  get 'login', to:  'participants#new'
+  #  post 'login', to: 'participants#create'
+  #  delete 'logout', to: 'participants#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
