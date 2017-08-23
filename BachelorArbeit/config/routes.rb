@@ -11,9 +11,14 @@ Rails.application.routes.draw do
     delete 'logout', to: 'sessions#destroy'
 
     # Participant routes
+    get '/signup', to: 'participants#new'
+    post '/signup', to: 'participants#create'
+    get  'login1', to:   'sessionsparticipants#new'
+    post  'login1', to:   'sessionsparticipants#create'
+    delete  'login1', to:   'sessionsparticipants#destroy'
     resources :participants
 
-     get 'index', to: 'participants#index'
+    # get 'index', to: 'participants#index'
   #  get 'login', to:  'participants#new'
   #  post 'login', to: 'participants#create'
   #  delete 'logout', to: 'participants#destroy'
