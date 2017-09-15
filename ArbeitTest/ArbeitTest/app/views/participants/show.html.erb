@@ -1,0 +1,27 @@
+
+
+
+<table>
+  <head>
+  <strong>Participant:</strong>
+  <p>
+  <%= @participant.password %>
+  <%= @participant.email %>
+</head>
+
+</p>
+
+<tbody>
+
+  <% @seminars.each do |seminar| %>
+    <tr>
+      <td><%= seminar.title %></td>
+      <td><%= seminar.description %></td>
+    <td><%= link_to 'Anmelden', seminar %></td>
+
+
+
+    </tr>
+  <% end %>
+</tbody>
+</table>

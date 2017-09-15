@@ -26,3 +26,57 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+    <td><%=  link_to 'Anmelden',new_seminar_participant_path(:seminar) %></td>
+
+      <td><%= link_to(@participant,{:controller => 'participants', :action => 'new', :seminar => 'seminar.id'})  %>
+      <td><%= link_to('Anmelden',{:controller => 'participants', :action => 'new', :seminar => 'seminar_id'})  %>
+      <td><%= link_to('Anmelden', {:controller => :participants, :action => :new},
+                                    :params => {:seminar => seminar.id}) %></td>
+
+
+
+
+
+
+
+      <!--
+
+        <td><%= link_to 'Anmelden',new_participant_path(@seminar) %> </td>
+      <tbody>
+        <% @seminars.each do |seminar| %>
+          <tr>
+            <td><%= seminar.title %></td>
+            <td><%= seminar.description %></td>
+            <td><%= link_to 'Anmelden',new_seminar_participant_path(seminar) %> </td>
+
+            <td><%= link_to 'Edit', edit_seminar_path(seminar) %></td>
+            <td><%= link_to 'Destroy', seminar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    -->
+
+
+
+
+    # debugger
+    #  @seminar = Seminar.find(params[:ids]).participants
+
+      # debugger
+        #debugger
+
+      #@seminar = Seminar.find(params[:id])
+
+    # debugger
+        #@particpant = @seminar.participants.find(params[:id])
+      #  @seminar = Seminar.find_by_id(3)
+      #  @participant.seminar_id = @seminar.id
+      #  debugger
+
+      #  @seminar = Seminar.new
+
+      #  @participant = @seminar.participants.build(participant: params[:id])
+
+        #debugger
