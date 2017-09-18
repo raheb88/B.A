@@ -4,5 +4,5 @@ class Participant < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
-
+    has_and_belongs_to_many :seminars
 end

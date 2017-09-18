@@ -7,7 +7,6 @@ class SeminarsController  < ApplicationController
   end
   def new
     @seminar = Seminar.new
-    @participants = Participant.all
 
   end
 
@@ -54,9 +53,6 @@ class SeminarsController  < ApplicationController
   end
   def seminar_params
     params.require(:seminar).permit(:title, :description)
-  end
-  def
-    params.require(:kids).permit(:name, :candy_ids => [])
   end
   def require_same_user
     if current_user  != @seminar.user

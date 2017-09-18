@@ -1,0 +1,15 @@
+<h1 align="center"> All Seminar Participants </h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @participants.each do |participant| %>
+  <tr>
+    <td><%= participant.name %></td>
+    <td><%= participant.email %></td>
+    <td><%= link_to 'Show', participant_path(participant) %></td>
+  </tr>
+<% end %>
+</table>

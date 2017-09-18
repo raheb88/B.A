@@ -6,7 +6,6 @@ class ParticipantsController <  ApplicationController
 
   def new
     @participant = Participant.new
-    @seminars = Seminar.all
   end
 
   def show
@@ -30,7 +29,4 @@ class ParticipantsController <  ApplicationController
       params.require(:participant).permit(:name, :email, :password,
         :password_confirmation)
     end
-    def participant_params
-      params.require(:participant).permit(:name, :participant_ids => [])
-end
 end

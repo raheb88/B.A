@@ -1,0 +1,98 @@
+ lec 95
+///////////////////////////////////////////////////////////////////
+This is the repository for the first B.A app
+
+Important
+1. work on seminar page.
+a. user name
+b. questions about seminar
+
+bis 22.08.17  10 Uhr
+2 Gliederung
+
+Tabellenstrucktur
+bis 15.09.17 9 uhr 
+
+
+/////////////////////////////////////////////////////////////////////////////
+                  Git
+////////////////////////////////////////////////////////////////////////////
+git add -A
+git commit -m "messag"
+git push
+git  checkout   name // for other branches
+git merge  user // from branch to master update
+git branch -d branchName
+
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+                    codes migration
+////////////////////////////////////////////////////////////////////////////
+ rake db:rollback  /to delete the title and description
+ rails generate migration create_example /create new migrate file
+ rake db:migrate /run
+rails generate migration add_description_to_seminars /add new items to database
+
+Seminar.all / relations btw database
+
+article = Aritcle.new(title: "this my s...", description: "this is ")
+/ creating aritcle
+Aritcle.create(title: "kad",)
+article = Article.find(id) // updating
+article.destory // destory article
+
+
+
+
+To find an article with id 2 and edit it's title:
+
+article = Article.find(2) # Here assumption is article with id of 2 was being looked for
+
+article.title = "This is an edited title"
+
+article.save
+
+To delete an article, example with id 5:
+
+article = Article.find(5)
+
+article.destroy
+
+To add validations presence and length validations to article model for title and description:
+
+class Article < ActiveRecord::Base
+
+validates :title, presence: true, length: {minimum: 3, maximum: 50}
+
+validates :description, presence: true, length: {minimum: 10, maximum: 300}
+
+end
+
+To find errors in article object while saving (if it's rolled back):
+
+article.errors.any?
+
+article.errors.full_messages
+
+/////////////////////////////////////////////////////////////////////
+                  route
+////////////////////////////////////////////////////////////////////
+          resouces :seminars
+
+
+////////////////////////////////////////////////////////////////////
+                  Cut _- Coding
+///////////////////////////////////
+        render plain: params[:seminar].inspect // desplaying
+
+
+///////////////////////////////////////////////////////////////////////////////
+                    CSSSS
+<%= link_to "Seminar", root_path, class: "navbar-brand", id: "logo" %>7
+
+  <li> <a href="#">Link <span class="sr-only">(current)</span></a></li>
+
+
+///////////////////////////////////////////////////////////////////7//////
+                  BackGround  :::: section 5 lecture 78
+////////////////////////                  ////////////////////////////////7777

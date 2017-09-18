@@ -11,33 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918131818) do
+ActiveRecord::Schema.define(version: 20170817123635) do
 
   create_table "participants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
-    t.string   "unlock_token"
-    t.datetime "locked_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   add_index "participants", ["email"], name: "index_participants_on_email", unique: true
-  add_index "participants", ["reset_password_token"], name: "index_participants_on_reset_password_token", unique: true
 
   create_table "seminars", force: :cascade do |t|
     t.string   "title"
@@ -46,11 +30,6 @@ ActiveRecord::Schema.define(version: 20170918131818) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "user_id1"
-  end
-
-  create_table "seminars_participants", force: :cascade do |t|
-    t.integer "seminar_id"
-    t.integer "participant_id"
   end
 
   create_table "users", force: :cascade do |t|
