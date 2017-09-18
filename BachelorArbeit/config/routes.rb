@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-   root  'welcome#home'
+  devise_for :participants
+   root  to: 'seminars#index'
   # get 'about', to: 'pages#about'
 
     resources :seminars
