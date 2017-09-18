@@ -2,7 +2,9 @@ class AddDeviseToParticipants < ActiveRecord::Migration
   def self.up
     change_table :participants do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      ## there was  a problem with duplicate therefore comment :email
+    #  t.string :email,              null: false, default: ""
+
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -19,13 +21,14 @@ class AddDeviseToParticipants < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
+    ## there was  a problem with duplicate therefore comment :email
+    #  t.string :name
+
       ## Confirmable
        t.string   :confirmation_token
        t.datetime :confirmed_at
        t.datetime :confirmation_sent_at
        t.string   :unconfirmed_email # Only if using reconfirmable
-
-       t.string   :name 
 
       ## Lockable
        t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts

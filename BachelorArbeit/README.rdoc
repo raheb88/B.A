@@ -11,7 +11,7 @@ bis 22.08.17  10 Uhr
 2 Gliederung
 
 Tabellenstrucktur
-bis 15.09.17 9 uhr 
+bis 15.09.17 9 uhr
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -96,3 +96,15 @@ article.errors.full_messages
 ///////////////////////////////////////////////////////////////////7//////
                   BackGround  :::: section 5 lecture 78
 ////////////////////////                  ////////////////////////////////7777
+
+
+
+
+before_save { self.email = email.downcase }
+validates :name,  presence: true, length: { maximum: 50 }
+VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: {case_sensitive: false }
+has_secure_password
+validates :password, presence: true, length: {minimum: 6}

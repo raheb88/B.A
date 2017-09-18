@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #devise_for :participants
   devise_for :participants
    root  to: 'seminars#index'
   # get 'about', to: 'pages#about'
