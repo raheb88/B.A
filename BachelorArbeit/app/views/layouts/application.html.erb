@@ -9,6 +9,9 @@
 <body>
   <%= render 'layouts/navigation' %>
   <%= render 'layouts/messages' %>
+
+  <!-- to display the devise messages -->
+
   <div class="container">
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>">
@@ -16,13 +19,14 @@
     </div>
   <% end %>
 </div>
-
+<!-- using yield  for header and some top_content -->
 <%= yield :top_content %>
 
 <div class="container">
     <h1><%= yield :header %></h1>
     <%= yield %>
   </div>
+
   <%= render 'layouts/footer' %>
   <%= debug(params)  if Rails.env.development? %>
 </body>

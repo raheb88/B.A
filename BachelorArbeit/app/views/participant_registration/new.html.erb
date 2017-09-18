@@ -1,10 +1,11 @@
 <% content_for :top_content do %>
+<div form_for @ParticipantRegistration
   <div class="jumbotron">
     <div class="container">
       <h1>Welcome!</h1>
       <p>Please Register Yourself for Seminar.</p>
       <p>
-        <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+        <%= link_to 'Register', new_pa_registration_path, class: 'btn btn-primary btn-lg' %>
       </p>
     </div>
   </div>
