@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  #devise_for :participants
-  devise_for :participants
+
+#  devise_for :participants
    root  to: 'seminars#index'
   # get 'about', to: 'pages#about'
 
@@ -19,6 +19,11 @@ Rails.application.routes.draw do
     post  'login1', to:   'sessionsparticipants#create'
     delete  'login1', to:   'sessionsparticipants#destroy'
     resources :participants
+
+
+    resources :attendants
+    get '/signup', to: 'attendants#new'
+    post '/signup', to: 'attendants#create' 
 
     # get 'index', to: 'participants#index'
   #  get 'login', to:  'participants#new'

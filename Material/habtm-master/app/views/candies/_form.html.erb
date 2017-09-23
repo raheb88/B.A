@@ -12,12 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :wamwatan %><br>
+    <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= collection_check_boxes(:candy, :kid_ids, @kids, :id, :name) %> 
-  </div>  
+    <!-- :name is from kid -->
+    <%= collection_check_boxes(:candy, :kid_ids, @kids, :id, :name) %>
+    <% debugger %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
