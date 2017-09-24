@@ -19,7 +19,11 @@
     <!-- :name is from kid -->
     <%= collection_check_boxes(:attendant, :seminar_ids, @seminars, :id, :title) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-control">
+    <div class="col-sm-offset-3 col-sm-5">
+      <%= f.submit("Weiter", class: 'btn btn-primary btn-lg') %>
+    </div>
   </div>
+
+
 <% end %>

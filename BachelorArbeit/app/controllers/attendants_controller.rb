@@ -10,6 +10,7 @@ class AttendantsController < ApplicationController
     # GET /candies/1
     # GET /candies/1.json
     def show
+       @attendant_seminars = @attendant.seminars.paginate(page: params[:page], per_page: 2)
     end
 
     # GET /candies/new
