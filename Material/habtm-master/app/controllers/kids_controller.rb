@@ -27,7 +27,7 @@ class KidsController < ApplicationController
   # POST /kids.json
   def create
     @kid = Kid.new(kid_params)
-  
+
     respond_to do |format|
       if @kid.save
         format.html { redirect_to @kid, notice: 'Kid was successfully created.' }

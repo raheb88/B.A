@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      #my code cause couldn't find the id change to
+      #@current_user ||= User.find(session[:id]) if session[:id]
+
   end
 
   def logged_in?

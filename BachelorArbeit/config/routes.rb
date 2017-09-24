@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
     resources :attendants
     get '/signup', to: 'attendants#new'
-    post '/signup', to: 'attendants#create' 
+    post '/signup', to: 'attendants#create'
 
     # get 'index', to: 'participants#index'
   #  get 'login', to:  'participants#new'

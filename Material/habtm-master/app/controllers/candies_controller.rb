@@ -27,7 +27,6 @@ class CandiesController < ApplicationController
   # POST /candies.json
   def create
     @candy = Candy.new(candy_params)
-      debugger
     respond_to do |format|
       if @candy.save
         format.html { redirect_to @candy, notice: 'Candy was successfully created.' }

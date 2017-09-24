@@ -87,9 +87,11 @@ class SeminarsController  < ApplicationController
   def set_seminar
     @seminar = Seminar.find(params[:id])
   end
+
   def seminar_params
     params.require(:seminar).permit(:title, :description)
   end
+
   def require_same_user
     if current_user  != @seminar.user
       flash[:danger] = "You can only edit or delete your own seminars"

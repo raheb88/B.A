@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attendant.name %>
+</p>
+
+<p>
+	<strong>Seminar Name:</strong>
+	<%= @attendant.seminars.map {|s| s.title}.join(', ') %>
+
+</p>
