@@ -1,5 +1,9 @@
 Halloween::Application.routes.draw do
-  resources :candies, :kids
+  devise_for :kids
+  devise_for :candies
+  #root to: 'pages#index'
+
+ resources :candies, :kids
 
   root 'static_pages#index'
   match '/instructions', to: "static_pages#instructions", via: 'get'
@@ -44,7 +48,7 @@ Halloween::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
