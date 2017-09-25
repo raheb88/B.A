@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+     @current_user ||= User.find(session[:user_id]) if session[:user_id]
       #my code cause couldn't find the id change to
       #@current_user ||= User.find(session[:id]) if session[:id]
 
@@ -24,3 +24,14 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+
+
+# the name be whitelisted
+#before_action :configure_permitted_parameters, if: :devise_controller?
+
+#protected
+
+#def configure_permitted_parameters
+#  devise_parameter_sanitizer.for(:sign_up) << :name
+#  devise_parameter_sanitizer.for(:account_update) << :name
+#end

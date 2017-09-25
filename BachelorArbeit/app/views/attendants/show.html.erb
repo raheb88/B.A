@@ -1,9 +1,0 @@
-<h1 align="center">Welcome to your<%= @attendant.name %> page</h1>
-<h4 align="center"><%= @attendant.name %>'s seminars</h4>
-<div class="center"
-  <%= will_paginate @attendant_seminars %>
-</div>
-<%= render 'seminars/seminar', obj: @attendant_seminars %>
-<div class="center"
-  <%= will_paginate @attendant_seminars %>
-</div>

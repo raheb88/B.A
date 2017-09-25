@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
 
-  devise_for :attendants
+
+
 #  devise_for :participants
-   root  to: 'seminars#index'
+  # root  to: 'seminars#index'
   # get 'about', to: 'pages#about'
+    root to: 'pages#index'
+    #devise_for :attendants
+    #devise_for :attendants, path: 'attendants'
+  #devise_for :attendants, controllers: { registration: 'registration' }
+  #  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :attendants, :controllers => {:registrations => "attendants/registrations"}
+
+#  devise_for :attendants,
+#   :skip => [:registrations ]
+
+ #as user do
+  # Registrations
+  #get   '/signup'   => 'attendants/registrations#new', as: :new_attendant_registration
+#end
 
     resources :seminars
     get 'signup', to: 'users#new'
@@ -22,7 +37,8 @@ Rails.application.routes.draw do
     resources :participants
 
 
-    resources :attendants
+#    resources :attendants
+  #  devise_for :attendants
     get '/signup', to: 'attendants#new'
     post '/signup', to: 'attendants#create'
 
